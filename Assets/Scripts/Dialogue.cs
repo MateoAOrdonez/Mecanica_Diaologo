@@ -23,7 +23,7 @@ public class Dialogue : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown("f"))
-
+        {
             if (!didDialogueStart)
             {
                 StartDialogue();
@@ -32,6 +32,16 @@ public class Dialogue : MonoBehaviour
             {
                 NextDialogueLine();
             }
+            else
+            {
+                StopAllCoroutines();
+                CajaDeDialogo.text = lineasDeDialogo[lineIndex];
+            }
+        }
+        
+
+            
+
     }
 
     private void StartDialogue()
