@@ -5,42 +5,47 @@ using TMPro;
 
 public class Dialogue : MonoBehaviour
 {
-    [SerializeField, TextArea(4,6)] private string[] lineasDeDialogo;
+    [SerializeField, TextArea(4, 6)] private string[] lineasDeDialogo;
     [SerializeField] private GameObject PanelDelDialogo;
     [SerializeField] private TMP_Text CajaDeDialogo;
 
     private bool didDialogueStart;
     private int lineIndex;
     public float velocidadEscritura;
+    public static bool endDialo;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        endDialo = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("f"))
+        if (OnTriggerEnter.onTrigger == true && endDialo == false)
         {
-            if (!didDialogueStart)
+            if (!didDialogueStart && (Input.GetKeyDown(KeyCode.E)))
             {
                 StartDialogue();
             }
-            else if (CajaDeDialogo.text == lineasDeDialogo[lineIndex])
+
+            if (Input.GetKeyDown(KeyCode.F))
             {
-                NextDialogueLine();
-            }
-            else
-            {
-                StopAllCoroutines();
-                CajaDeDialogo.text = lineasDeDialogo[lineIndex];
+
+                if (CajaDeDialogo.text == lineasDeDialogo[lineIndex])
+                {
+                    NextDialogueLine();
+                }
+                else
+                {
+                    StopAllCoroutines();
+                    CajaDeDialogo.text = lineasDeDialogo[lineIndex];
+                }
             }
         }
-        
 
-            
+        Debug.Log(endDialo);
 
     }
 
@@ -49,20 +54,23 @@ public class Dialogue : MonoBehaviour
         didDialogueStart = true;
         PanelDelDialogo.SetActive(true);
         lineIndex = 0;
+        endDialo = false;
         StartCoroutine(ShowLine());
     }
 
     private void NextDialogueLine()
     {
         lineIndex++;
-        if(lineIndex < lineasDeDialogo.Length)
+        if (lineIndex < lineasDeDialogo.Length)
         {
             StartCoroutine(ShowLine());
+            endDialo = false;
         }
         else
         {
             didDialogueStart = false;
             PanelDelDialogo.SetActive(false);
+            endDialo = true;
         }
     }
 
@@ -70,7 +78,7 @@ public class Dialogue : MonoBehaviour
     {
         CajaDeDialogo.text = string.Empty;
 
-        foreach(char ch in lineasDeDialogo[lineIndex])
+        foreach (char ch in lineasDeDialogo[lineIndex])
         {
             CajaDeDialogo.text += ch;
             yield return new WaitForSeconds(velocidadEscritura);

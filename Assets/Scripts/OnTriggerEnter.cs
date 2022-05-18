@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class OnTriggerEnter : MonoBehaviour
 {
+
+    public GameObject textoInstru;
+    public static bool onTrigger;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        textoInstru.SetActive(false);
+        onTrigger = false;
     }
 
     // Update is called once per frame
@@ -18,7 +23,23 @@ public class OnTriggerEnter : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-       Debug.LogError("hola");
+
+        if (collision.gameObject.name.Equals("Player") )
+        {
+            textoInstru.SetActive(true);
+            onTrigger = true;
+        }
+       
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.name.Equals("Player"))
+        {
+            textoInstru.SetActive(false);
+            onTrigger = false;
+            Dialogue.endDialo = false;
+        }
     }
 
 }
