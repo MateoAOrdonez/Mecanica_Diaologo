@@ -9,7 +9,7 @@ public class Dialogue : MonoBehaviour
     [SerializeField] private GameObject PanelDelDialogo;
     [SerializeField] private TMP_Text CajaDeDialogo;
 
-    private bool didDialogueStart;
+    public static bool didDialogueStart;
     private int lineIndex;
     public float velocidadEscritura;
     public static bool endDialo;
@@ -30,7 +30,7 @@ public class Dialogue : MonoBehaviour
                 StartDialogue();
             }
 
-            if (Input.GetKeyDown(KeyCode.F))
+            if (Input.GetKeyDown(KeyCode.Space))
             {
 
                 if (CajaDeDialogo.text == lineasDeDialogo[lineIndex])
