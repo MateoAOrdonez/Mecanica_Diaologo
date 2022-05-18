@@ -37,8 +37,8 @@ public class CharacterController : MonoBehaviour
 
             if (Input.GetButtonDown("Jump") && Mathf.Abs(rigidBody.velocity.y) < 0.001f)
             {
+                //animator.SetBool("IsJumping", false);
                 rigidBody.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
-                animator.SetBool("IsJumping", true);
             }
 
             
