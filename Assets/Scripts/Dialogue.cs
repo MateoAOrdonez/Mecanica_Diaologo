@@ -11,7 +11,7 @@ public class Dialogue : MonoBehaviour
 
     public static bool didDialogueStart;
     private int lineIndex;
-    public float velocidadEscritura;
+    public static float velocidadEscritura;
     public static bool endDialo;
 
     // Start is called before the first frame update
@@ -44,8 +44,6 @@ public class Dialogue : MonoBehaviour
                 }
             }
         }
-
-        Debug.Log(endDialo);
 
     }
 
