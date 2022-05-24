@@ -9,9 +9,10 @@ public class ConfiguracionDialogo : MonoBehaviour
     public Slider SliderVelocity;
     public Slider SliderTexto;
     public GameObject TMP;
-    [SerializeField] public TextMeshProUGUI[] lineasDeDialogo;
+    [SerializeField] public TMP_FontAsset[] fuentes;
     public GameObject panel;
     private bool panelActivado;
+    private int posicion;
 
     // Start is called before the first frame update
     void Start()
@@ -20,16 +21,16 @@ public class ConfiguracionDialogo : MonoBehaviour
         SliderVelocity.value = 100f;
         panel.SetActive(false);
         panelActivado = false;
+        posicion = 0;
+        TMP.GetComponent<TMP_Text>().font = fuentes[posicion];
     }
 
     // Update is called once per frame
     void Update()
     {
         TMP.GetComponent<TMP_Text>().fontSize = SliderTexto.value;
-        Debug.LogError(TMP.GetComponent<TMP_Text>().font);
 
         Dialogue.velocidadEscritura = (SliderVelocity.value * 0.2f);
-
 
         if (Input.GetKeyDown(KeyCode.Escape) && panelActivado == false)
         {
@@ -44,6 +45,25 @@ public class ConfiguracionDialogo : MonoBehaviour
         else
         {
 
+        }
+
+    }
+
+    public void sumaFuente()
+    {
+        if (posicion < fuentes.Length-1)
+        {
+            posicion++;
+            TMP.GetComponent<TMP_Text>().font = fuentes[posicion];
+        }
+    }
+
+    public void restaFuente()
+    {
+        if (posicion < fuentes.Length && posicion != 0)
+        {
+            posicion--;
+            TMP.GetComponent<TMP_Text>().font = fuentes[posicion];
         }
     }
 
