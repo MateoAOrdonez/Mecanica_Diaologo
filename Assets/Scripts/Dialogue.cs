@@ -23,6 +23,7 @@ public class Dialogue : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (OnTriggerEnter.onTrigger == true && endDialo == false)
         {
             if (!didDialogueStart && (Input.GetKeyDown(KeyCode.E)))
