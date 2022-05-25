@@ -13,6 +13,7 @@ public class ConfiguracionDialogo : MonoBehaviour
     public GameObject panel;
     private bool panelActivado;
     private int posicion;
+    public Dropdown drop;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +24,24 @@ public class ConfiguracionDialogo : MonoBehaviour
         panelActivado = false;
         posicion = 0;
         TMP.GetComponent<TMP_Text>().font = fuentes[posicion];
+
+        drop.options.Clear();
+
+
+        for (int i = 0; i < fuentes.Length; i++)
+        {
+            drop.options.Add(new Dropdown.OptionData() { text = fuentes[i].name });
+        }
+
+        drop.onValueChanged.AddListener(delegate {
+            DropdownValueChanged(drop);
+        });
+    }
+
+    void DropdownValueChanged(Dropdown change)
+    {
+        Debug.Log("este escogio: " + change.value);
+        TMP.GetComponent<TMP_Text>().font = fuentes[change.value];
     }
 
     // Update is called once per frame
@@ -46,6 +65,8 @@ public class ConfiguracionDialogo : MonoBehaviour
         {
 
         }
+
+        Debug.Log(fuentes[posicion].name);
 
     }
 
