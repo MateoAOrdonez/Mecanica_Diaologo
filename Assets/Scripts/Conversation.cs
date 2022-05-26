@@ -5,7 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public struct Line
 {
-    //public string TituloDelDialogo;
+    public string TituloDelDialogo;
     public Characters personaje;
 
     [TextArea(2, 5)]

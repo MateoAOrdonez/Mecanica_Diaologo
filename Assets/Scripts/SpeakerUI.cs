@@ -8,8 +8,8 @@ public class SpeakerUI : MonoBehaviour
 {
 
     public Image retrato;
-    [SerializeField] private TMP_Text nombre;
-    [SerializeField] private TMP_Text dialogo;
+    public TMP_Text nombre;
+    public TMP_Text dialogo;
 
     private Characters hablante;
     public Characters Hablante
@@ -22,7 +22,6 @@ public class SpeakerUI : MonoBehaviour
             nombre.text = hablante.nombrePersonaje;
         }
     }
-
     public string Dialog
     {
         get { return dialogo.text; }

@@ -15,11 +15,14 @@ MonoBehaviour:
   personajeIzquierdo: {fileID: 11400000, guid: bc33e31cc7c4e1f428ca6be9df40cd51, type: 2}
   personajeDerecho: {fileID: 11400000, guid: 2fed50a9932312e48a6cce5667829b9c, type: 2}
   lineasDeDialogo:
-  - personaje: {fileID: 11400000, guid: 2fed50a9932312e48a6cce5667829b9c, type: 2}
-    dialogo: Hola
-  - personaje: {fileID: 11400000, guid: bc33e31cc7c4e1f428ca6be9df40cd51, type: 2}
-    dialogo: Hola
-  - personaje: {fileID: 11400000, guid: 2fed50a9932312e48a6cce5667829b9c, type: 2}
-    dialogo: Donde vas?
+  - TituloDelDialogo: 
+    personaje: {fileID: 11400000, guid: 2fed50a9932312e48a6cce5667829b9c, type: 2}
+    dialogo: Escoguiste el camino de la derecha
+  - TituloDelDialogo: 
+    personaje: {fileID: 11400000, guid: bc33e31cc7c4e1f428ca6be9df40cd51, type: 2}
+    dialogo: Si
+  - TituloDelDialogo: 
+    personaje: {fileID: 11400000, guid: 2fed50a9932312e48a6cce5667829b9c, type: 2}
+    dialogo: Tendras un viaje largo pero seguro
   decision: {fileID: 0}
   siguienteConversacion: {fileID: 0}

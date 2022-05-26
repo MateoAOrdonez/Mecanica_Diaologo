@@ -346,7 +346,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   opcion:
     Texto: 
-    conversation: {fileID: 0}
+    Respuesta: {fileID: 0}
   conversationChangeEvent:
     m_PersistentCalls:
       m_Calls:

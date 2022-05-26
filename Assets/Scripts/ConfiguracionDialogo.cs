@@ -9,7 +9,7 @@ public class ConfiguracionDialogo : MonoBehaviour
     public Slider SliderVelocity;
     public Slider SliderTexto;
     public GameObject TMP;
-    [SerializeField] public TMP_FontAsset[] fuentes;
+    public TMP_FontAsset[] fuentes;
     public GameObject panelMenu;
     public GameObject panelTexto;
     private bool panelActivado;

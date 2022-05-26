@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using TMPro;
+using UnityEngine.UI;
 
 [System.Serializable]
 public class QuestionEvent : UnityEvent<Question> { }
@@ -24,6 +26,8 @@ public class ConversationController : MonoBehaviour
     private SpeakerUI hablanteUiIzquierda;
     private SpeakerUI hablanteUiDerecha;
 
+    private string dialogoConversation;
+
     private int lineIndex;
     private bool conversationStarted = false;
 
@@ -45,17 +49,38 @@ public class ConversationController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (lineIndex < conversation.lineasDeDialogo.Length)
+        {
+            Line line = conversation.lineasDeDialogo[lineIndex];
+            dialogoConversation = line.dialogo;
+        }
+
         //Debug.Log(OnTriggerEnter.onTrigger);
         if (OnTriggerEnter.onTrigger == true && endDialo == false)
         {
-            if(!didDialogueStart && (Input.GetKeyDown(KeyCode.E)))
+            
+            if (!didDialogueStart && (Input.GetKeyDown(KeyCode.E)))
             {
                 StartDialogue();
+                //Debug.Log(SpeakerUI.dialogo.text);
             }
 
             if (didDialogueStart && Input.GetKeyDown(KeyCode.Space))
             {
-                NextDialogueLine();
+
+                //Debug.Log(SpeakerUI.DialogoCompleto);
+
+               //if (SpeakerUI.dialogo.text == dialogoConversation)
+                //{
+                    NextDialogueLine();
+
+                //}
+                //else
+                //{
+                   // Debug.Log("Esperar");
+//}
+
+                //NextDialogueLine();
             }
         }
     }
@@ -66,7 +91,7 @@ public class ConversationController : MonoBehaviour
         lineIndex = 0;
         hablanteUiIzquierda.Hablante = conversation.personajeIzquierdo;
         hablanteUiDerecha.Hablante = conversation.personajeDerecho;
-        NextDialogueLine();
+        DisplayLine();
         Instruccion.SetActive(false);
         conversationStarted = false;
     }
@@ -82,6 +107,8 @@ public class ConversationController : MonoBehaviour
         {
             AdvanceConversation();
         }
+
+        lineIndex++;
     }
 
     private void DisplayLine()
@@ -97,8 +124,7 @@ public class ConversationController : MonoBehaviour
         {
             SetDialog(hablanteUiDerecha, hablanteUiIzquierda, line);
         }
-
-        lineIndex +=1;
+        
         
     }
 
@@ -114,6 +140,7 @@ public class ConversationController : MonoBehaviour
         inactiveSpeakerUI.Hide();
 
         activeSpeakerUI.Dialog = "";
+
 
         StopAllCoroutines();
         StartCoroutine(EffectTypewriter(line.dialogo, activeSpeakerUI));
@@ -140,11 +167,11 @@ public class ConversationController : MonoBehaviour
 
     }
 
-    private IEnumerator EffectTypewriter(string text, SpeakerUI controller)
+    private IEnumerator EffectTypewriter(string text, SpeakerUI speedText)
     {
         foreach (char character in text.ToCharArray())
         {
-            controller.Dialog += character;
+            speedText.Dialog += character;
             yield return new WaitForSeconds(0.05f);
         }
     }
