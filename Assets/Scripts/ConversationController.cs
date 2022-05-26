@@ -173,7 +173,7 @@ public class ConversationController : MonoBehaviour
         foreach (char character in text.ToCharArray())
         {
             speedText.Dialog += character;
-            yield return new WaitForSeconds(0.05f);
+            yield return new WaitForSeconds(velocidadEscritura);
         }
     }
 

@@ -10,7 +10,7 @@ public class ConfiguracionDialogo : MonoBehaviour
     public Slider SliderTexto;
     public GameObject TMPDer;
     public GameObject TMPIzq;
-    public TMP_FontAsset[] fuentes;
+    [SerializeField] public TMP_FontAsset[] fuentes;
     public GameObject panelMenu;
     public GameObject panelTextoDer;
     public GameObject panelTextoIzq;
@@ -19,8 +19,9 @@ public class ConfiguracionDialogo : MonoBehaviour
 
     public float Altura;
     public float VelocidadTexto;
-    public int TamañoTexto;
+    public float TamañoTexto;
     public TMP_FontAsset fuente;
+    public Dropdown drop;
 
     // Start is called before the first frame update
     void Start()
@@ -28,13 +29,31 @@ public class ConfiguracionDialogo : MonoBehaviour
         panelTextoDer.GetComponent<RectTransform>().sizeDelta = new Vector2(0, Altura);
         panelTextoIzq.GetComponent<RectTransform>().sizeDelta = new Vector2(0, Altura);
 
-        SliderVelocity.value = VelocidadTexto;
-        SliderTexto.value = TamañoTexto;
+        VelocidadTexto = SliderVelocity.value;
+        TamañoTexto = SliderTexto.value;
         panelMenu.SetActive(false);
         panelActivado = false;
         posicion = 0;
-        TMPDer.GetComponent<TMP_Text>().font = fuente;
-        TMPIzq.GetComponent<TMP_Text>().font = fuente;
+        TMPDer.GetComponent<TMP_Text>().font = fuentes[posicion];
+        TMPIzq.GetComponent<TMP_Text>().font = fuentes[posicion];
+
+        drop.options.Clear();
+
+
+        for (int i = 0; i < fuentes.Length; i++)
+        {
+            drop.options.Add(new Dropdown.OptionData() { text = fuentes[i].name });
+        }
+
+        drop.onValueChanged.AddListener(delegate {
+            DropdownValueChanged(drop);
+        });
+    }
+
+    void DropdownValueChanged(Dropdown change)
+    {
+        TMPDer.GetComponent<TMP_Text>().font = fuentes[change.value];
+        TMPIzq.GetComponent<TMP_Text>().font = fuentes[change.value];
     }
 
     // Update is called once per frame
@@ -43,7 +62,7 @@ public class ConfiguracionDialogo : MonoBehaviour
         TMPDer.GetComponent<TMP_Text>().fontSize = SliderTexto.value;
         TMPIzq.GetComponent<TMP_Text>().fontSize = SliderTexto.value;
 
-        Dialogue.velocidadEscritura = (SliderVelocity.value * 0.2f);
+        ConversationController.velocidadEscritura = (SliderVelocity.value * 0.2f);
 
         if (Input.GetKeyDown(KeyCode.Escape) && panelActivado == false)
         {
@@ -62,7 +81,7 @@ public class ConfiguracionDialogo : MonoBehaviour
 
     }
 
-    public void sumaFuente()
+    /*public void sumaFuente()
     {
         if (posicion < fuentes.Length-1)
         {
@@ -80,7 +99,7 @@ public class ConfiguracionDialogo : MonoBehaviour
             TMPDer.GetComponent<TMP_Text>().font = fuentes[posicion];
             TMPIzq.GetComponent<TMP_Text>().font = fuentes[posicion];
         }
-    }
+    }*/
 
 
 }
