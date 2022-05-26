@@ -10,19 +10,27 @@ public class ConfiguracionDialogo : MonoBehaviour
     public Slider SliderTexto;
     public GameObject TMP;
     [SerializeField] public TMP_FontAsset[] fuentes;
-    public GameObject panel;
+    public GameObject panelMenu;
+    public GameObject panelTexto;
     private bool panelActivado;
     private int posicion;
+
+    public float Altura;
+    public float VelocidadTexto;
+    public int TamañoTexto;
+    public TMP_FontAsset fuente;
 
     // Start is called before the first frame update
     void Start()
     {
-        SliderVelocity.value = 0.6f;
-        SliderVelocity.value = 100f;
-        panel.SetActive(false);
+        panelTexto.GetComponent<RectTransform>().sizeDelta = new Vector2(0, Altura);
+
+        SliderVelocity.value = VelocidadTexto;
+        SliderTexto.value = TamañoTexto;
+        panelMenu.SetActive(false);
         panelActivado = false;
         posicion = 0;
-        TMP.GetComponent<TMP_Text>().font = fuentes[posicion];
+        TMP.GetComponent<TMP_Text>().font = fuente;
     }
 
     // Update is called once per frame
@@ -34,12 +42,12 @@ public class ConfiguracionDialogo : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape) && panelActivado == false)
         {
-            panel.SetActive(true);
+            panelMenu.SetActive(true);
             panelActivado = true;
         }
         else if (Input.GetKeyDown(KeyCode.Escape) && panelActivado == true)
         {
-            panel.SetActive(false);
+            panelMenu.SetActive(false);
             panelActivado = false;
         }
         else

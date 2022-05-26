@@ -22,7 +22,7 @@ public class CharacterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Dialogue.didDialogueStart == false)
+        if (ConversationController.didDialogueStart == false)
         {
 
             movement = Input.GetAxis("Horizontal");
