@@ -8,22 +8,34 @@ public class ConfiguracionDialogo : MonoBehaviour
 {
     public Slider SliderVelocity;
     public Slider SliderTexto;
-    public GameObject TMP;
+    public GameObject TMPDer;
+    public GameObject TMPIzq;
     [SerializeField] public TMP_FontAsset[] fuentes;
-    public GameObject panel;
+    public GameObject panelMenu;
+    public GameObject panelTextoDer;
+    public GameObject panelTextoIzq;
     private bool panelActivado;
     private int posicion;
+
+    public float Altura;
+    public float VelocidadTexto;
+    public float TamañoTexto;
+    public TMP_FontAsset fuente;
     public Dropdown drop;
 
     // Start is called before the first frame update
     void Start()
     {
-        SliderVelocity.value = 0.6f;
-        SliderVelocity.value = 100f;
-        panel.SetActive(false);
+        panelTextoDer.GetComponent<RectTransform>().sizeDelta = new Vector2(0, Altura);
+        panelTextoIzq.GetComponent<RectTransform>().sizeDelta = new Vector2(0, Altura);
+
+        VelocidadTexto = SliderVelocity.value;
+        TamañoTexto = SliderTexto.value;
+        panelMenu.SetActive(false);
         panelActivado = false;
         posicion = 0;
-        TMP.GetComponent<TMP_Text>().font = fuentes[posicion];
+        TMPDer.GetComponent<TMP_Text>().font = fuentes[posicion];
+        TMPIzq.GetComponent<TMP_Text>().font = fuentes[posicion];
 
         drop.options.Clear();
 
@@ -40,25 +52,26 @@ public class ConfiguracionDialogo : MonoBehaviour
 
     void DropdownValueChanged(Dropdown change)
     {
-        Debug.Log("este escogio: " + change.value);
-        TMP.GetComponent<TMP_Text>().font = fuentes[change.value];
+        TMPDer.GetComponent<TMP_Text>().font = fuentes[change.value];
+        TMPIzq.GetComponent<TMP_Text>().font = fuentes[change.value];
     }
 
     // Update is called once per frame
     void Update()
     {
-        TMP.GetComponent<TMP_Text>().fontSize = SliderTexto.value;
+        TMPDer.GetComponent<TMP_Text>().fontSize = SliderTexto.value;
+        TMPIzq.GetComponent<TMP_Text>().fontSize = SliderTexto.value;
 
-        Dialogue.velocidadEscritura = (SliderVelocity.value * 0.2f);
+        ConversationController.velocidadEscritura = (SliderVelocity.value * 0.2f);
 
         if (Input.GetKeyDown(KeyCode.Escape) && panelActivado == false)
         {
-            panel.SetActive(true);
+            panelMenu.SetActive(true);
             panelActivado = true;
         }
         else if (Input.GetKeyDown(KeyCode.Escape) && panelActivado == true)
         {
-            panel.SetActive(false);
+            panelMenu.SetActive(false);
             panelActivado = false;
         }
         else
@@ -66,16 +79,15 @@ public class ConfiguracionDialogo : MonoBehaviour
 
         }
 
-        Debug.Log(fuentes[posicion].name);
-
     }
 
-    public void sumaFuente()
+    /*public void sumaFuente()
     {
         if (posicion < fuentes.Length-1)
         {
             posicion++;
-            TMP.GetComponent<TMP_Text>().font = fuentes[posicion];
+            TMPDer.GetComponent<TMP_Text>().font = fuentes[posicion];
+            TMPIzq.GetComponent<TMP_Text>().font = fuentes[posicion];
         }
     }
 
@@ -84,9 +96,10 @@ public class ConfiguracionDialogo : MonoBehaviour
         if (posicion < fuentes.Length && posicion != 0)
         {
             posicion--;
-            TMP.GetComponent<TMP_Text>().font = fuentes[posicion];
+            TMPDer.GetComponent<TMP_Text>().font = fuentes[posicion];
+            TMPIzq.GetComponent<TMP_Text>().font = fuentes[posicion];
         }
-    }
+    }*/
 
 
 }

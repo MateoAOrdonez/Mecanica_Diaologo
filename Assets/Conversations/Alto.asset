@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 125e3e88f4d993746bc1088b1b78180f, type: 3}
+  m_Name: Alto
+  m_EditorClassIdentifier: 
+  personajeIzquierdo: {fileID: 11400000, guid: ee600fddf10d20048a3a182bc56c57dc, type: 2}
+  personajeDerecho: {fileID: 11400000, guid: bc33e31cc7c4e1f428ca6be9df40cd51, type: 2}
+  lineasDeDialogo:
+  - TituloDelDialogo: 
+    personaje: {fileID: 11400000, guid: ee600fddf10d20048a3a182bc56c57dc, type: 2}
+    dialogo: "Alto ah\xED"
+  - TituloDelDialogo: 
+    personaje: {fileID: 11400000, guid: ee600fddf10d20048a3a182bc56c57dc, type: 2}
+    dialogo: Como se atreven a pisarme
+  - TituloDelDialogo: 
+    personaje: {fileID: 11400000, guid: bc33e31cc7c4e1f428ca6be9df40cd51, type: 2}
+    dialogo: "Lo sieto mucho, no era nuestra inteci\xF3n "
+  - TituloDelDialogo: 
+    personaje: {fileID: 11400000, guid: bc33e31cc7c4e1f428ca6be9df40cd51, type: 2}
+    dialogo: Te pedimos disculpas
+  - TituloDelDialogo: 
+    personaje: {fileID: 11400000, guid: ee600fddf10d20048a3a182bc56c57dc, type: 2}
+    dialogo: Lo dejare pasar por esta ocasion
+  decision: {fileID: 0}
+  siguienteConversacion: {fileID: 11400000, guid: 19a1701b896b1f04ebb2862101d17eda, type: 2}
