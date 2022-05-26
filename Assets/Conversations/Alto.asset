@@ -32,3 +32,4 @@ MonoBehaviour:
     dialogo: Lo dejare pasar por esta ocasion
   decision: {fileID: 0}
   siguienteConversacion: {fileID: 11400000, guid: 19a1701b896b1f04ebb2862101d17eda, type: 2}
+  fondoImage: {fileID: -3733048368384456235, guid: 1f47e274e53cd9148b77765b105726e9, type: 3}

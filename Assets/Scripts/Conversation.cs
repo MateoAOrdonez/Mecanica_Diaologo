@@ -20,4 +20,5 @@ public class Conversation : ScriptableObject
     public Line[] lineasDeDialogo;
     public Question decision;
     public Conversation siguienteConversacion;
+    public Sprite fondoImage;
 }

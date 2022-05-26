@@ -38,7 +38,7 @@ public class OnTriggerEnter : MonoBehaviour
         {
             textoInstru.SetActive(false);
             onTrigger = false;
-            Dialogue.endDialo = false;
+            ConversationController.endDialo = false;
         }
     }
 

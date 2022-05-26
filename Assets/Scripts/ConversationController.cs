@@ -31,12 +31,16 @@ public class ConversationController : MonoBehaviour
     private int lineIndex;
     private bool conversationStarted = false;
 
+    public GameObject fondo;
+
+    private Sprite sprite;
+
     public void ChangeConversation(Conversation nextConversation)
     {
         conversationStarted = false;
         conversation = nextConversation;
         lineIndex = 0;
-        NextDialogueLine();
+        StartDialogue();
     }
 
     // Start is called before the first frame update
@@ -49,7 +53,16 @@ public class ConversationController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         
+
+        if (conversation != defaultConversation)
+        {
+            fondo.GetComponent<SpriteRenderer>().sprite = conversation.fondoImage;
+        }
+
+        //fondo.GetComponent<Image>().sprite = conversation.fondoImage.;
+
         if (lineIndex < conversation.lineasDeDialogo.Length)
         {
             Line line = conversation.lineasDeDialogo[lineIndex];
@@ -63,14 +76,13 @@ public class ConversationController : MonoBehaviour
             if (!didDialogueStart && (Input.GetKeyDown(KeyCode.E)))
             {
                 StartDialogue();
-                Debug.Log(lineIndex);
-                lineIndex++;
+                //Debug.Log(lineIndex);
                 //Debug.Log(SpeakerUI.dialogo.text);
             }
 
             if (didDialogueStart && Input.GetKeyDown(KeyCode.Space))
             {
-                Debug.Log(lineIndex);
+                //Debug.Log(lineIndex);
                 //Debug.Log(SpeakerUI.DialogoCompleto);
 
                 //if (SpeakerUI.dialogo.text == dialogoConversation)
@@ -111,7 +123,6 @@ public class ConversationController : MonoBehaviour
             AdvanceConversation();
         }
 
-        lineIndex++;
     }
 
     private void DisplayLine()
@@ -127,6 +138,9 @@ public class ConversationController : MonoBehaviour
         {
             SetDialog(hablanteUiDerecha, hablanteUiIzquierda, line);
         }
+
+        lineIndex++;
+
     }
 
     public void SetDialog
@@ -152,18 +166,18 @@ public class ConversationController : MonoBehaviour
         if (conversation.decision !=null)
         {
             questionEvent.Invoke(conversation.decision);
-            Debug.Log("decision");
+            //Debug.Log("decision");
         }
             
         else if(conversation.siguienteConversacion != null)
         {
             ChangeConversation(conversation.siguienteConversacion);
-            Debug.Log("Sigue");
+            //Debug.Log("Sigue");
         }
         else
         {
             EndConversation();
-            Debug.Log("3");
+            //Debug.Log("3");
         }
 
     }

@@ -29,7 +29,7 @@ public class ConfiguracionDialogo : MonoBehaviour
         panelTextoDer.GetComponent<RectTransform>().sizeDelta = new Vector2(0, Altura);
         panelTextoIzq.GetComponent<RectTransform>().sizeDelta = new Vector2(0, Altura);
 
-        VelocidadTexto = SliderVelocity.value;
+        SliderVelocity.value = VelocidadTexto;
         TamañoTexto = SliderTexto.value;
         panelMenu.SetActive(false);
         panelActivado = false;

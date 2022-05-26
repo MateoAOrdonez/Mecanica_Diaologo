@@ -17,21 +17,25 @@ MonoBehaviour:
   lineasDeDialogo:
   - TituloDelDialogo: 1
     personaje: {fileID: 11400000, guid: 2fed50a9932312e48a6cce5667829b9c, type: 2}
-    dialogo: Hola aventurero
+    dialogo: Hola aventurero, que te trae por esta zona
   - TituloDelDialogo: 2
     personaje: {fileID: 11400000, guid: bc33e31cc7c4e1f428ca6be9df40cd51, type: 2}
     dialogo: Hola mercader
   - TituloDelDialogo: 3
     personaje: {fileID: 11400000, guid: bc33e31cc7c4e1f428ca6be9df40cd51, type: 2}
-    dialogo: Quiero llegar al castillo
+    dialogo: "Quiero llegar al castillo, \xBFsabes d\xF3nde se encuentra?"
   - TituloDelDialogo: 4
     personaje: {fileID: 11400000, guid: 2fed50a9932312e48a6cce5667829b9c, type: 2}
-    dialogo: Tienes dos opciones
+    dialogo: Puedes llegar por dos caminos diferentes
   - TituloDelDialogo: 5
     personaje: {fileID: 11400000, guid: 2fed50a9932312e48a6cce5667829b9c, type: 2}
-    dialogo: Puedes escoger el camino de la derecha o de la ziquierda
+    dialogo: "El de la derecha tendr\xE1s que ir por un desierto"
   - TituloDelDialogo: 6
     personaje: {fileID: 11400000, guid: 2fed50a9932312e48a6cce5667829b9c, type: 2}
-    dialogo: Por cual quieres ir?
+    dialogo: "El de la izquierda tendr\xE1s que ir por una selva"
+  - TituloDelDialogo: 7
+    personaje: {fileID: 11400000, guid: 2fed50a9932312e48a6cce5667829b9c, type: 2}
+    dialogo: "Ahora dime. \xBFPor cu\xE1l quieres ir?"
   decision: {fileID: 11400000, guid: f95ab7c8384be6745b0a50675e7a4a26, type: 2}
   siguienteConversacion: {fileID: 0}
+  fondoImage: {fileID: -3733048368384456235, guid: 1f47e274e53cd9148b77765b105726e9, type: 3}

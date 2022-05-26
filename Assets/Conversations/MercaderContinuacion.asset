@@ -23,3 +23,4 @@ MonoBehaviour:
     dialogo: 'Cual camino escoges? '
   decision: {fileID: 11400000, guid: f95ab7c8384be6745b0a50675e7a4a26, type: 2}
   siguienteConversacion: {fileID: 0}
+  fondoImage: {fileID: -3733048368384456235, guid: 1f47e274e53cd9148b77765b105726e9, type: 3}

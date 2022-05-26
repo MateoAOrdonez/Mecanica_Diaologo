@@ -15,14 +15,18 @@ MonoBehaviour:
   personajeIzquierdo: {fileID: 11400000, guid: bc33e31cc7c4e1f428ca6be9df40cd51, type: 2}
   personajeDerecho: {fileID: 11400000, guid: 2fed50a9932312e48a6cce5667829b9c, type: 2}
   lineasDeDialogo:
-  - TituloDelDialogo: 
+  - TituloDelDialogo: 1
     personaje: {fileID: 11400000, guid: 2fed50a9932312e48a6cce5667829b9c, type: 2}
-    dialogo: Escoguiste el camino de la derecha
-  - TituloDelDialogo: 
+    dialogo: Escogiste el camino del desierto
+  - TituloDelDialogo: 2
+    personaje: {fileID: 11400000, guid: 2fed50a9932312e48a6cce5667829b9c, type: 2}
+    dialogo: "Tendr\xE1s un viaje largo y agotador"
+  - TituloDelDialogo: 3
+    personaje: {fileID: 11400000, guid: 2fed50a9932312e48a6cce5667829b9c, type: 2}
+    dialogo: Toma esta botella con agua y ten mucho cuidado
+  - TituloDelDialogo: 4
     personaje: {fileID: 11400000, guid: bc33e31cc7c4e1f428ca6be9df40cd51, type: 2}
-    dialogo: Si
-  - TituloDelDialogo: 
-    personaje: {fileID: 11400000, guid: 2fed50a9932312e48a6cce5667829b9c, type: 2}
-    dialogo: Tendras un viaje largo pero seguro
+    dialogo: "Gracias, tendr\xE9 cuidado"
   decision: {fileID: 0}
   siguienteConversacion: {fileID: 0}
+  fondoImage: {fileID: 21300000, guid: e4fbc2c2a5eedd74aaf3419bd885ea06, type: 3}

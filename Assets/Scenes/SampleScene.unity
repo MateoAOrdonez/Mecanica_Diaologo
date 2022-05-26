@@ -2183,7 +2183,7 @@ MonoBehaviour:
   panelTextoDer: {fileID: 979766209}
   panelTextoIzq: {fileID: 642766246}
   Altura: 400
-  VelocidadTexto: 0.05
+  VelocidadTexto: 0.4
   "Tama\xF1oTexto": 70
   fuente: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   drop: {fileID: 2131179283}
@@ -4766,6 +4766,7 @@ MonoBehaviour:
         m_CallState: 2
   PersonajeIzquierda: {fileID: 1732825314}
   PersonajeDerecha: {fileID: 882249631}
+  fondo: {fileID: 1704651239}
 --- !u!1 &1619942028
 GameObject:
   m_ObjectHideFlags: 0
@@ -5088,10 +5089,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 1700549686}
   m_HandleRect: {fileID: 1072054860}
   m_Direction: 0
-  m_MinValue: 0.2
+  m_MinValue: 0.01
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 1
+  m_Value: 0.4
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -5757,7 +5758,6 @@ GameObject:
   - component: {fileID: 2087598522}
   - component: {fileID: 2087598524}
   - component: {fileID: 2087598521}
-  - component: {fileID: 2087598525}
   - component: {fileID: 2087598523}
   m_Layer: 0
   m_Name: Mercader
@@ -5879,28 +5879,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0.03411883, y: -0.3320003}
   m_Size: {x: 1.3753077, y: 2.4592876}
   m_Direction: 0
---- !u!114 &2087598525
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2087598519}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d28883ec4d94e54096e9b1d9029c8b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lineasDeDialogo:
-  - "Mercader: Hola viajero, \xBFqu\xE9 te trae por estas tierras?"
-  - "Aventurero: Estoy buscando la gema del poder. \xBFSabes d\xF3nde est\xE1?"
-  - "Mercader: La encontraras subiendo la monta\xF1a. Pero ten cuidado con los lobos
-    hambrientos."
-  - "Aventurero: Esta bien, tendr\xE9 cuidado."
-  - "Mercader: Espera viajero\u2026 Ten este objeto que te proteger\xE1 en tu viaje."
-  - 'Aventurero: Gracias, te vere luego.'
-  PanelDelDialogo: {fileID: 0}
-  CajaDeDialogo: {fileID: 0}
 --- !u!1 &2088010962
 GameObject:
   m_ObjectHideFlags: 0
