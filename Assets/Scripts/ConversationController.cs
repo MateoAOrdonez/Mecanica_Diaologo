@@ -49,6 +49,7 @@ public class ConversationController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if (lineIndex < conversation.lineasDeDialogo.Length)
         {
             Line line = conversation.lineasDeDialogo[lineIndex];
@@ -62,17 +63,19 @@ public class ConversationController : MonoBehaviour
             if (!didDialogueStart && (Input.GetKeyDown(KeyCode.E)))
             {
                 StartDialogue();
+                Debug.Log(lineIndex);
+                lineIndex++;
                 //Debug.Log(SpeakerUI.dialogo.text);
             }
 
             if (didDialogueStart && Input.GetKeyDown(KeyCode.Space))
             {
-
+                Debug.Log(lineIndex);
                 //Debug.Log(SpeakerUI.DialogoCompleto);
 
-               //if (SpeakerUI.dialogo.text == dialogoConversation)
+                //if (SpeakerUI.dialogo.text == dialogoConversation)
                 //{
-                    NextDialogueLine();
+                NextDialogueLine();
 
                 //}
                 //else
@@ -124,8 +127,6 @@ public class ConversationController : MonoBehaviour
         {
             SetDialog(hablanteUiDerecha, hablanteUiIzquierda, line);
         }
-        
-        
     }
 
     public void SetDialog

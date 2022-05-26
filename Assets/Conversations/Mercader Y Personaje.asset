@@ -22,16 +22,16 @@ MonoBehaviour:
     personaje: {fileID: 11400000, guid: bc33e31cc7c4e1f428ca6be9df40cd51, type: 2}
     dialogo: Hola mercader
   - TituloDelDialogo: 3
-    personaje: {fileID: 11400000, guid: 2fed50a9932312e48a6cce5667829b9c, type: 2}
+    personaje: {fileID: 11400000, guid: bc33e31cc7c4e1f428ca6be9df40cd51, type: 2}
     dialogo: Quiero llegar al castillo
   - TituloDelDialogo: 4
-    personaje: {fileID: 11400000, guid: bc33e31cc7c4e1f428ca6be9df40cd51, type: 2}
+    personaje: {fileID: 11400000, guid: 2fed50a9932312e48a6cce5667829b9c, type: 2}
     dialogo: Tienes dos opciones
   - TituloDelDialogo: 5
     personaje: {fileID: 11400000, guid: 2fed50a9932312e48a6cce5667829b9c, type: 2}
-    dialogo: Puedes escoguer el camino de la dorecha o de la ziquierda
+    dialogo: Puedes escoger el camino de la derecha o de la ziquierda
   - TituloDelDialogo: 6
-    personaje: {fileID: 11400000, guid: bc33e31cc7c4e1f428ca6be9df40cd51, type: 2}
+    personaje: {fileID: 11400000, guid: 2fed50a9932312e48a6cce5667829b9c, type: 2}
     dialogo: Por cual quieres ir?
   decision: {fileID: 11400000, guid: f95ab7c8384be6745b0a50675e7a4a26, type: 2}
   siguienteConversacion: {fileID: 0}

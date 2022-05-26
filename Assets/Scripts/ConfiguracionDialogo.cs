@@ -12,7 +12,8 @@ public class ConfiguracionDialogo : MonoBehaviour
     public GameObject TMPIzq;
     public TMP_FontAsset[] fuentes;
     public GameObject panelMenu;
-    public GameObject panelTexto;
+    public GameObject panelTextoDer;
+    public GameObject panelTextoIzq;
     private bool panelActivado;
     private int posicion;
 
@@ -24,7 +25,8 @@ public class ConfiguracionDialogo : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        panelTexto.GetComponent<RectTransform>().sizeDelta = new Vector2(0, Altura);
+        panelTextoDer.GetComponent<RectTransform>().sizeDelta = new Vector2(0, Altura);
+        panelTextoIzq.GetComponent<RectTransform>().sizeDelta = new Vector2(0, Altura);
 
         SliderVelocity.value = VelocidadTexto;
         SliderTexto.value = TamañoTexto;

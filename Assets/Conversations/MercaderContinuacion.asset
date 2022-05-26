@@ -10,19 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 125e3e88f4d993746bc1088b1b78180f, type: 3}
-  m_Name: Prueba
+  m_Name: MercaderContinuacion
   m_EditorClassIdentifier: 
-  personajeIzquierdo: {fileID: 11400000, guid: d9ced6323988d1e47ab78380252d22c3, type: 2}
-  personajeDerecho: {fileID: 11400000, guid: bc33e31cc7c4e1f428ca6be9df40cd51, type: 2}
+  personajeIzquierdo: {fileID: 11400000, guid: bc33e31cc7c4e1f428ca6be9df40cd51, type: 2}
+  personajeDerecho: {fileID: 11400000, guid: 2fed50a9932312e48a6cce5667829b9c, type: 2}
   lineasDeDialogo:
   - TituloDelDialogo: 
     personaje: {fileID: 11400000, guid: 2fed50a9932312e48a6cce5667829b9c, type: 2}
-    dialogo: Hola
+    dialogo: Continuando con lo nuestro
   - TituloDelDialogo: 
     personaje: {fileID: 11400000, guid: 2fed50a9932312e48a6cce5667829b9c, type: 2}
-    dialogo: 1
-  - TituloDelDialogo: 
-    personaje: {fileID: 11400000, guid: d9ced6323988d1e47ab78380252d22c3, type: 2}
-    dialogo: 2
-  decision: {fileID: 11400000, guid: ed63f18b0e84a814bb5709e6e16dd12c, type: 2}
+    dialogo: 'Cual camino escoges? '
+  decision: {fileID: 11400000, guid: f95ab7c8384be6745b0a50675e7a4a26, type: 2}
   siguienteConversacion: {fileID: 0}

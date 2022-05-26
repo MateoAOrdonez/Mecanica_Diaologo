@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Jugador
   m_EditorClassIdentifier: 
   nombrePersonaje: Jugador
-  imgPersonaje: {fileID: 21300000, guid: 5c862e37257a6ab42bc21898a6fa163a, type: 3}
+  imgPersonaje: {fileID: -2179035320332887505, guid: 667865ae55f81374aaee1fb494e48b42, type: 3}
