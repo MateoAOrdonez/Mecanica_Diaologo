@@ -8,7 +8,8 @@ public class ConfiguracionDialogo : MonoBehaviour
 {
     public Slider SliderVelocity;
     public Slider SliderTexto;
-    public GameObject TMP;
+    public GameObject TMPDer;
+    public GameObject TMPIzq;
     public TMP_FontAsset[] fuentes;
     public GameObject panelMenu;
     public GameObject panelTexto;
@@ -30,13 +31,15 @@ public class ConfiguracionDialogo : MonoBehaviour
         panelMenu.SetActive(false);
         panelActivado = false;
         posicion = 0;
-        TMP.GetComponent<TMP_Text>().font = fuente;
+        TMPDer.GetComponent<TMP_Text>().font = fuente;
+        TMPIzq.GetComponent<TMP_Text>().font = fuente;
     }
 
     // Update is called once per frame
     void Update()
     {
-        TMP.GetComponent<TMP_Text>().fontSize = SliderTexto.value;
+        TMPDer.GetComponent<TMP_Text>().fontSize = SliderTexto.value;
+        TMPIzq.GetComponent<TMP_Text>().fontSize = SliderTexto.value;
 
         Dialogue.velocidadEscritura = (SliderVelocity.value * 0.2f);
 
@@ -62,7 +65,8 @@ public class ConfiguracionDialogo : MonoBehaviour
         if (posicion < fuentes.Length-1)
         {
             posicion++;
-            TMP.GetComponent<TMP_Text>().font = fuentes[posicion];
+            TMPDer.GetComponent<TMP_Text>().font = fuentes[posicion];
+            TMPIzq.GetComponent<TMP_Text>().font = fuentes[posicion];
         }
     }
 
@@ -71,7 +75,8 @@ public class ConfiguracionDialogo : MonoBehaviour
         if (posicion < fuentes.Length && posicion != 0)
         {
             posicion--;
-            TMP.GetComponent<TMP_Text>().font = fuentes[posicion];
+            TMPDer.GetComponent<TMP_Text>().font = fuentes[posicion];
+            TMPIzq.GetComponent<TMP_Text>().font = fuentes[posicion];
         }
     }
 

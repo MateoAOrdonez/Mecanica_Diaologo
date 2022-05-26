@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf8e3b42533b32a4ca9db7d9339bfb75, type: 3}
+  m_Name: Nueva
+  m_EditorClassIdentifier: 
+  Pregunta: Terminaste?
+  opciones:
+  - Texto: Si
+    Respuesta: {fileID: 11400000, guid: 8f315a6b24dc3c4488db6b7c1d78c0ac, type: 2}
+  - Texto: No
+    Respuesta: {fileID: 11400000, guid: 4a73dac8b198b054d9b087f8afbc4fff, type: 2}
+  - Texto: Talve
+    Respuesta: {fileID: 11400000, guid: d96546b6906f14543bed9caeb76161ea, type: 2}
